@@ -1,0 +1,114 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 4px;#
+  position: relative;
+  z-index: 1;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+.calc-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 99%;
+  height:100%;
+}
+
+.container1 {
+  width: 100%;
+  height: 900px;
+  background-color: #393276;
+}
+.container2 {
+  width: 100%;
+  height: 900px;
+  background-color: #60A3F3;
+}
+.skewed-container {
+  position: relative;
+  left: -40px;
+  width: 200px;
+  height: 900px;
+  transform-origin: top;
+  transform:skewX(-10deg);
+  background-color: #393276;
+}
+
+
+
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: auto;
+  border: solid black 1px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #aaa;
+  position: relative;
+  z-index: 1;
+}
+
+.screen {
+  width: 100%;
+  border: 0px;
+  resize: none;
+  font-size: 25px;
+}
+
+#input {
+  position: relative;
+  top: 4px;
+  height: 100px;
+  text-align: right;
+}
+
+#output {
+  margin-bottom: 10px;
+  text-align: right;
+  background-color: white;
+}
+
+.keypad {
+  font-size: 35px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  margin: 1px;
+  grid-gap: 2px;
+}
+.btn {
+  width: 100%;
+  height: 60px;
+  border-radius: 3px;
+  text-align: center;
+  padding-top: 14px;
+  border: solid black 0.5px;
+}
+
+.symbol {
+  background-color: #ccc;
+}
+.number {
+  background-color: whitesmoke;
+}
+
+.equals {
+  background-color: green;
+}
