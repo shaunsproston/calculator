@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
   </head>
   <body>
 
@@ -13,35 +14,35 @@
         <h1>Calculator Project</h1>
         <div class="calculator">
           <div>
-            <textarea id="input" class="screen" placeholder="" ></textarea>
+            <textarea id="input" class="screen"></textarea>
             <textarea id="output" class="screen" disabled></textarea>
           </div>
           <div class="keypad">
 
-              <div class="btn symbol">C</div>
-              <div class="btn symbol">(&nbsp&nbsp)</div>
-              <div class="btn symbol">%</div>
-              <div class="btn symbol">&divide</div>
+              <div class="btn symbol" id="btn-cancel">C</div>
+              <div class="btn symbol" id="btn-brackets">(&nbsp&nbsp)</div>
+              <div class="btn symbol" id="btn-percentage">%</div>
+              <div class="btn symbol" id="btn-divide">&divide</div>
 
-              <div class="btn number">7</div>
-              <div class="btn number">8</div>
-              <div class="btn number">9</div>
-              <div class="btn symbol">&times</div>
+              <div class="btn number" id="btn-7">7</div>
+              <div class="btn number" id="btn-8">8</div>
+              <div class="btn number" id="btn-9">9</div>
+              <div class="btn symbol" id="btn-times">&times</div>
 
-              <div class="btn number">4</div>
-              <div class="btn number">5</div>
-              <div class="btn number">6</div>
-              <div class="btn symbol">-</div>
+              <div class="btn number" id="btn-4">4</div>
+              <div class="btn number" id="btn-5">5</div>
+              <div class="btn number" id="btn-6">6</div>
+              <div class="btn symbol" id="btn-minus">-</div>
 
-              <div class="btn number">1</div>
-              <div class="btn number">2</div>
-              <div class="btn number">3</div>
-              <div class="btn symbol">+</div>
+              <div class="btn number" id="btn-1">1</div>
+              <div class="btn number" id="btn-2">2</div>
+              <div class="btn number" id="btn-3">3</div>
+              <div class="btn symbol" id="btn-plus">+</div>
 
-              <div class="btn number">.</div>
-              <div class="btn number">0</div>
-              <div class="btn number">&plusmn</div>
-              <div class="btn equals">=</div>
+              <div class="btn number" id="btn-dot">.</div>
+              <div class="btn number" id="btn-zero">0</div>
+              <div class="btn number" id="btn-plus-minus">&plusmn</div>
+              <div class="btn equals" id="equals">=</div>
           </div>
         </div>
       </div>
@@ -51,5 +52,6 @@
       <div class="skewed-container">
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

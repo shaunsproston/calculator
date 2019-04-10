@@ -2,6 +2,11 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  display: flex;
+  flex-direction: row;
+}
+
 h1 {
   text-align: center;
   background-color: white;
@@ -9,11 +14,6 @@ h1 {
   border-radius: 4px;#
   position: relative;
   z-index: 1;
-}
-
-body {
-  display: flex;
-  flex-direction: row;
 }
 
 .calc-container {
@@ -46,9 +46,6 @@ body {
   background-color: #393276;
 }
 
-
-
-
 .calculator {
   display: flex;
   flex-direction: column;
@@ -65,7 +62,7 @@ body {
 }
 
 .screen {
-  width: 100%;
+  width: 99%;
   border: 0px;
   resize: none;
   font-size: 25px;
