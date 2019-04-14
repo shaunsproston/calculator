@@ -72,12 +72,16 @@ h1 {
   position: relative;
   top: 4px;
   height: 100px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
   text-align: right;
 }
 
 #output {
   margin-bottom: 10px;
   text-align: right;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
   background-color: white;
 }
 
