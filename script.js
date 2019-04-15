@@ -3,13 +3,29 @@
 const input = document.getElementById("input");
 let output = document.getElementById("output");
 let btn = document.getElementsByClassName("btn");
-console.log(btn[6].innerHTML);
+/*
+for (let i=0; i<btn.length; i++){
+  console.log(btn[i].textContent);
+}
+*/
 
 
+
+
+
+
+document.addEventListener("click", function(evt){
+let btnClicked = evt.target.className;
+let btnContent = evt.target.textContent
+  if (btnClicked === "btn symbol" || btnClicked === "btn number" || btnClicked === "btn equals") {
+    console.log("button");
+    console.log(btnContent);
+  }
+});
 
 
 // Keypad Controls and Cancel
-
+/*
 document.addEventListener("click", function(e){
   let inputVal = e.target.innerHTML;
 
@@ -28,6 +44,7 @@ document.addEventListener("click", function(e){
   }
 
 });
+*/
 /*
 document.addEventListener("click", function(e){
   let inputVal = e.target.innerHTML;
