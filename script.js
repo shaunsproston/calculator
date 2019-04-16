@@ -1,59 +1,51 @@
-//input
-
-const input = document.getElementById("input");
+let input = document.getElementById("input");
 let output = document.getElementById("output");
-let btn = document.getElementsByClassName("btn");
-/*
-for (let i=0; i<btn.length; i++){
-  console.log(btn[i].textContent);
-}
-*/
-
-
-
-
-
 
 document.addEventListener("click", function(evt){
 let btnClicked = evt.target.className;
 let btnContent = evt.target.textContent
   if (btnClicked === "btn symbol" || btnClicked === "btn number" || btnClicked === "btn equals") {
-    console.log("button");
-    console.log(btnContent);
+    btnOptions(btnContent);
   }
 });
 
+function btnOptions(btn){
 
-// Keypad Controls and Cancel
-/*
-document.addEventListener("click", function(e){
-  let inputVal = e.target.innerHTML;
+  switch (btn){
+    case "C":
+      clear();
+      break;
+    default:
+      inputSum(btn);
+  };
+};
 
-  if (inputVal === "C"){
-    input.innerHTML = "";
-  } else {
-    input.innerHTML += e.target.innerHTML;
-    console.log('test 2 ' + inputVal)
-  }
-  if (inputVal === "="){
-    inputVal = input.innerHTML.slice(0,-1);
-    let result = eval(inputVal);
-    output.innerHTML = result;
-    input.innerHTML = "";
-    console.log('test 3 ' + inputVal)
-  }
+function inputSum(val){
+  let sum = input.textContent += val;
+  if(val === "="){
+    sum = input.textContent.slice(0,-1);
+    sum = sum.replace(/x/g, "*");
+    //sum = sum.replace(/&divide/i, "/");
+    console.log(sum);
+    calculation(sum);
+  };
+};
 
-});
-*/
-/*
-document.addEventListener("click", function(e){
-  let inputVal = e.target.innerHTML;
+function calculation(sum){
+  let result = eval(sum);
+  outputResult(result);
+};
 
-  if (inputVal === "1"){
-    input.innerHTML = "1";
-  } else {
-    input.innerHTML = ""
-  }
+function clear(){
+  input.textContent = "";
+  output.textContent = "";
+};
 
-});
-*/
+function outputResult(val){
+  output.textContent = val;
+  input.textContent = "";
+};
+
+function multiplyOperator(){
+  return btn = "*";
+};
