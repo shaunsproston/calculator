@@ -1,51 +1,71 @@
-let input = document.getElementById("input");
-let output = document.getElementById("output");
+let numberButtons = document.querySelectorAll('[data-number]');
+let operationsButtons = document.querySelectorAll('[data-operator]');
+let equalsButton = document.querySelector('[data-equals]');
+let deleteButton = document.querySelector('[data-delete]');
+let clearButton = document.querySelector('[data-clear]');
+let inputTextElement = document.querySelector('#input'); // previous operand
+let outputTextElement = document.querySelector('#output'); // current operand
+let appendedVal;
+let result;
 
-document.addEventListener("click", function(evt){
-let btnClicked = evt.target.className;
-let btnContent = evt.target.textContent
-  if (btnClicked === "btn symbol" || btnClicked === "btn number" || btnClicked === "btn equals") {
-    btnOptions(btnContent);
-  }
+
+const clear = ()=>{
+  inputTextElement.textContent = '';
+  outputTextElement.textContent = '';
+  operationsButtons = undefined;
+};
+
+const deleteInput = ()=>{
+  inputTextElement.textContent = inputTextElement.textContent.slice(0,-1);
+  return;
+};
+
+const appendNumber = (num)=>{
+  if (num === '.' && appendedVal.includes('.')) return;
+  appendedVal = inputTextElement.textContent += num;
+  calculate();
+};
+
+const chooseOperation = (operator)=>{
+  if (appendedVal.endsWith('+') || appendedVal.endsWith('-') || appendedVal.endsWith('*') || appendedVal.endsWith('/')) return;
+  appendedVal = inputTextElement.textContent += operator;
+};
+
+const calculate = ()=>{
+ result = eval(appendedVal);
+ updateDisplay(result);
+};
+
+const updateDisplay = (output)=>{
+  outputTextElement.innerText = output;
+  console.log(inputTextElement.textContent);
+};
+
+
+
+numberButtons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    appendNumber(btn.innerText);
+  });
 });
 
-function btnOptions(btn){
+operationsButtons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    chooseOperation(btn.innerText);
+  });
+});
 
-  switch (btn){
-    case "C":
-      clear();
-      break;
-    default:
-      inputSum(btn);
-  };
-};
+clearButton.addEventListener('click', ()=>{
+    clear();
+});
 
-function inputSum(val){
-  let sum = input.textContent += val;
-  if(val === "="){
-    sum = input.textContent.slice(0,-1);
-    sum = sum.replace(/x/g, "*");
-    //sum = sum.replace(/&divide/i, "/");
-    console.log(sum);
-    calculation(sum);
-  };
-};
+equalsButton.addEventListener('click', ()=>{
+  inputTextElement.textContent = result;
+  outputTextElement.textContent = '';
+})
 
-function calculation(sum){
-  let result = eval(sum);
-  outputResult(result);
-};
+deleteButton.addEventListener('click', ()=>{
+  deleteInput();
+})
 
-function clear(){
-  input.textContent = "";
-  output.textContent = "";
-};
-
-function outputResult(val){
-  output.textContent = val;
-  input.textContent = "";
-};
-
-function multiplyOperator(){
-  return btn = "*";
-};
+console.log(outputTextElement.innerText);

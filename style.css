@@ -65,7 +65,7 @@ h1 {
   width: 99%;
   border: 0px;
   resize: none;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 #input {
@@ -86,13 +86,14 @@ h1 {
 }
 
 .keypad {
-  font-size: 35px;
+  font-size: 30px;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   margin: 1px;
   grid-gap: 2px;
+  cursor: pointer;
 }
 .btn {
   width: 100%;
@@ -103,13 +104,17 @@ h1 {
   border: solid black 0.5px;
 }
 
-.symbol {
+.operator, .cancel, .delete {
   background-color: #ccc;
 }
 .number {
   background-color: whitesmoke;
 }
-
 .equals {
   background-color: green;
+  grid-column: span 2;
+}
+
+.cancel {
+  grid-column: span 2;
 }
