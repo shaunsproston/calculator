@@ -130,7 +130,7 @@ h1 {
 
   .calculator {
     padding: 4px;
-    width: 85%;
+    width: 90%;
   }
   h1 {
     font-size: 24px;
@@ -143,14 +143,18 @@ h1 {
 @media only screen and (max-width: 400px){
 
   .skewed-container {
-    height: 90vh;
+    height: 92vh;
     left: 0px;
   }
   #input {
     height: 10%;
+    top: 5px;
   }
   #output {
     height: 10%;
+  }
+  .keypad {
+    font-size: 25px;
   }
   .btn {
     height: 40px;
